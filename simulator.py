@@ -6,7 +6,7 @@ from queue_ds import TrafficQueue
 
 ROAD_COLOR = (35, 35, 35)
 
-GRASS = (34, 138, 34)
+GRASS = (34, 139, 34)
 
 WHITE = (255, 255, 255)
 
@@ -243,4 +243,4 @@ for i in range(0, 800, 40):
 
     pygame.display.flip()
 
-    clock.tick(20)
+    clock.tick(30)
