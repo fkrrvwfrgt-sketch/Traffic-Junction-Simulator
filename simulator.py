@@ -6,15 +6,15 @@ from queue_ds import TrafficQueue
 
 ROAD_COLOR = (35, 35, 35)
 
-GRASS = (34, 139, 34)
+GRASS = (34, 138, 34)
 
 WHITE = (255, 255, 255)
 
 YELLOW = (255, 255, 0)
 
-AL2_COLOR = (0, 150, 255)  # Blue for Priority Lane
+AL2_COLOR = (0, 150, 255)  
 
-AL3_COLOR = (255, 165, 0)  # Orange for Free Left Lane
+AL3_COLOR = (255, 165, 0)
 
 
 pygame.init()
