@@ -49,8 +49,6 @@ class Vehicle:
 
         self.finished = False
 
-       
-
         # Lane Placement:
 
         if road == 'A':
@@ -69,9 +67,7 @@ class Vehicle:
 
             self.pos = [-20, 410 if lane_type=='AL2' else 445]; self.vel = [2.5, 0]
 
-       
-
-        self.color = AL2_COLOR if lane_type == 'AL2' else AL3_COLOR
+          self.color = AL2_COLOR if lane_type == 'AL2' else AL3_COLOR
 
 
 
@@ -85,9 +81,7 @@ class Vehicle:
 
            
 
-            
-
-            if self.lane_type == 'AL3':
+                if self.lane_type == 'AL3':
 
                 if self.road == 'A' and self.pos[1] > 330: self.vel = [-2.5, 0]
 
@@ -119,9 +113,7 @@ def poll_incoming():
 
             for _ in arrivals:
 
-               
-
-                target_lane = 'AL2' if random.random() > 0.3 else 'AL3'
+               target_lane = 'AL2' if random.random() > 0.3 else 'AL3'
 
                 if target_lane == 'AL2':
 
@@ -142,7 +134,6 @@ timer = 0
 priority_active = False
 
 
-
 while True:
 
     screen.fill(GRASS)
@@ -150,10 +141,7 @@ while True:
     poll_incoming()
 
 
-
-    #  PRIORITY LOGIC 
-
-    
+#  PRIORITY LOGIC 
 
     if queues['A'].size() > 10:
 
@@ -163,7 +151,7 @@ while True:
 
     elif priority_active and queues['A'].size() < 5:
 
-        priority_active = False # Resume normal rotation
+        priority_active = False
 
    
 
@@ -175,34 +163,23 @@ while True:
         current_green = roads_list[(roads_list.index(current_green) + 1) % 4]
 
 
-
-
     pygame.draw.rect(screen, ROAD_COLOR, (300, 0, 200, 800)) 
 
     pygame.draw.rect(screen, ROAD_COLOR, (0, 300, 800, 200)) 
 
    
+for i in range(0, 800, 40):
+ for offset in [333, 366, 433, 466]:
 
- 
-    for i in range(0, 800, 40):
+     pygame.draw.line(screen, WHITE, (offset, i), (offset, i+20), 1)
 
-        for offset in [333, 366, 433, 466]:
-
-            pygame.draw.line(screen, WHITE, (offset, i), (offset, i+20), 1)
-
-            pygame.draw.line(screen, WHITE, (i, offset), (i+20, offset), 1)
-
-   
-
-    
+     pygame.draw.line(screen, WHITE, (i, offset), (i+20, offset), 1)
 
     pygame.draw.line(screen, YELLOW, (400, 0), (400, 800), 2)
 
     pygame.draw.line(screen, YELLOW, (0, 400), (800, 400), 2)
 
 
-
-   
 
     if timer % 60 == 0 and queues[current_green].size() > 0:
 
@@ -211,8 +188,7 @@ while True:
         queues[current_green].dequeue()
 
 
-
-    # Traffic Lights 
+ # Traffic Lights 
 
     light_pos = {'A': (350, 280), 'B': (520, 350), 'C': (450, 520), 'D': (280, 450)}
 
@@ -228,8 +204,7 @@ while True:
 
 
 
-
-    for car in active_cars[:]:
+  for car in active_cars[:]:
 
         # Stop at junction if red light
 
@@ -254,7 +229,6 @@ while True:
         screen.blit(msg, (310, 20))
 
    
-
     screen.blit(font.render("Blue = AL2 (Light)", True, AL2_COLOR), (10, 10))
 
     screen.blit(font.render("Orange = AL3 (Free Left)", True, AL3_COLOR), (10, 30))
