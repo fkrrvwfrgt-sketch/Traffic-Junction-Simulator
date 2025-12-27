@@ -1,12 +1,8 @@
 import pygame
-
 import os
-
 import random
 
 from queue_ds import TrafficQueue
-
-
 
 ROAD_COLOR = (35, 35, 35)
 
@@ -19,7 +15,6 @@ YELLOW = (255, 255, 0)
 AL2_COLOR = (0, 150, 255)  # Blue for Priority Lane
 
 AL3_COLOR = (255, 165, 0)  # Orange for Free Left Lane
-
 
 
 pygame.init()
@@ -156,7 +151,7 @@ while True:
 
 
 
-    # --- PRIORITY LOGIC ---
+    #  PRIORITY LOGIC 
 
     
 
@@ -172,8 +167,7 @@ while True:
 
    
 
-    # Normal Rotation (every 5 seconds)
-
+    # Normal Rotation
     if not priority_active and timer % 300 == 0:
 
         roads_list = ['A', 'B', 'C', 'D']
@@ -183,9 +177,9 @@ while True:
 
 
 
-    pygame.draw.rect(screen, ROAD_COLOR, (300, 0, 200, 800)) # Road NS
+    pygame.draw.rect(screen, ROAD_COLOR, (300, 0, 200, 800)) 
 
-    pygame.draw.rect(screen, ROAD_COLOR, (0, 300, 800, 200)) # Road EW
+    pygame.draw.rect(screen, ROAD_COLOR, (0, 300, 800, 200)) 
 
    
 
@@ -218,7 +212,7 @@ while True:
 
 
 
-    # Traffic Lights & Lane Labels
+    # Traffic Lights 
 
     light_pos = {'A': (350, 280), 'B': (520, 350), 'C': (450, 520), 'D': (280, 450)}
 
@@ -228,15 +222,12 @@ while True:
 
         pygame.draw.circle(screen, col, pos, 15)
 
-        # Display Queue Size for AL2
-
         txt = font.render(f"{road} AL2: {queues[road].size()}", True, WHITE)
 
         screen.blit(txt, (pos[0]-30, pos[1]-45))
 
 
 
-    # Move/Draw Vehicles
 
     for car in active_cars[:]:
 
@@ -250,15 +241,11 @@ while True:
 
         car.draw()
 
-        # Remove off-screen cars
 
         if car.pos[0] < -50 or car.pos[0] > 850 or car.pos[1] < -50 or car.pos[1] > 850:
 
             active_cars.remove(car)
 
-
-
-    # UI Overlay
 
     if priority_active:
 
