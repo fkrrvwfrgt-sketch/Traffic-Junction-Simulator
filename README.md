@@ -28,6 +28,5 @@ Dequeue: O(n) (because we use list pop(0))
 Open terminal in dsa-queue-simulator folder.
 Run:python simulator.py
 7. Demo
-
-
+https://github.com/user-attachments/assets/6e87d652-0218-40a4-a2f9-bd7f4d0728f6
 
