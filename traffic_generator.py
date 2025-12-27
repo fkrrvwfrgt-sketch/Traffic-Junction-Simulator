@@ -16,4 +16,5 @@ while True:
     with open(road_file, "a") as f:
         f.write("v\n")
     
-    time.sleep(random.uniform(0.2, 0.7))
+    time.sleep(random.uniform(0.3, 0.7))
+
