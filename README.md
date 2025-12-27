@@ -25,27 +25,9 @@ Serve left-turn lanes if vehicles present.
 Enqueue: O(1)
 Dequeue: O(n) (because we use list pop(0))
 6. How to Run
-Open terminal in dsa-queue-simulator 
-
-https://github.com/user-attachments/assets/26ad1837-28f6-4631-971a-9dc885128805
-
-folder.
-Run:
-python simulator.py
-   7.  References
-
-https://github.com/user-attachments/assets/57edd1f4-3dba-4e6c-a3c7-daeb3dedd6b7
+Open terminal in dsa-queue-simulator folder.
+Run:python simulator.py
+7. Demo
 
 
-Python Documentation: collections.deque and heapq modules. https://docs.python.org/3/library/collections.html
-Pygame Documentation: Graphics and event handling. https://www.pygame.org/docs/
-Queueing Theory: Basics of M/M/1 queues and Poisson processes for traffic simulation.
-Assignment 1 Problem Statement: Logic formulas implementing Fair Dispatch and Priority Hysteresis.
-8. Source Code
-Repository Link:
-9. 9.Conclusion
-The traffic junction simulator shows how effectively real logistical challenges can be solved with linear data structures. A system operates the traffic flow across the cross of four big roads by realizing the vehicle queues based on the FIFO principle and a logic-driven priority queue. The project confirms that the mathematical model used-vehicle dispatching-balances normal average flow with high-priority overrides, effectively maintaining junction efficiency while preventing deadlocks. This simulation allows clear and useful visualization, in a dynamic real-time environment, of queue management systems using Python and Pygame.
-10. Demo
 
-    
-    
